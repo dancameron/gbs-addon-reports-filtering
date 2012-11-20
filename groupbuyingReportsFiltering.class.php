@@ -162,7 +162,7 @@ class Group_Buying_Fancy_Reporting_Addon extends Group_Buying_Controller {
 
 	public static function init() {
 		// Hook this plugin into the GBS add-ons controller
-		//add_filter( 'gb_addons', array( get_class(), 'gb_add_on' ), 10, 1 );
+		add_filter( 'gb_addons', array( get_class(), 'gb_add_on' ), 10, 1 );
 	}
 
 	public static function gb_add_on( $addons ) {
