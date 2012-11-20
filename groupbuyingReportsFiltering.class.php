@@ -153,6 +153,7 @@ class Group_Buying_Fancy_Reporting extends Group_Buying_Controller {
 
 	public function progress_bar(){
 		global $gb_report_pages;
+		echo '<div id="load_errors"></div>';
 		if ( $gb_report_pages > 1 ) {	
 			echo '<div id="progress_bar"></div>';
 		}
