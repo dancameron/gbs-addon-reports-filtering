@@ -2,6 +2,8 @@
 
 class Group_Buying_Fancy_Reporting extends Group_Buying_Controller {
 
+	const RETURN_RECORD = 50;
+
 	public static function init() {
 		parent::init();
 		add_action( 'gb_reports_show_records', array( get_class(), 'reports_show_records' ), 100, 1 );
@@ -57,18 +59,18 @@ class Group_Buying_Fancy_Reporting extends Group_Buying_Controller {
 								$("#progressbar").progressbar({ value: 100 });
 								records_loaded();
 							}
-						}
+						};
 						load_records(1);
 
 						function records_loaded() {
-							$("#report_page #progress_bar").fadeOut( 'slow' );
-							$("#report_page .report").fadeIn();
+							$("#progress_bar").fadeOut( 'slow' );
+							$(".report").fadeIn();
 							$(".report table")
 								.tablesorter({debug: true, widgets: ['zebra'], sortList: [[0,0]]})
 								.tablesorterFilter({
 									filterContainer: "#filter-box",
 									filterClearContainer: "#filter-clear-button",
-									filterColumns: [0,1,5,6,7,8,9],
+									filterColumns: [0,1,2,3,4,5,6,7,8,9,10,11,12],
 									// filterCaseSensitive: true
 								});
 							$(".page_title .report_button").click(function(event) {
@@ -93,7 +95,7 @@ class Group_Buying_Fancy_Reporting extends Group_Buying_Controller {
 								.tablesorterFilter({
 									filterContainer: "#filter-box",
 									filterClearContainer: "#filter-clear-button",
-									filterColumns: [0,1,2,3,4,5,6,7,8,9,10],
+									filterColumns: [0,1,2,3,4,5,6,7,8,9,10,11,12],
 									// filterCaseSensitive: true
 								});
 							
@@ -139,7 +141,7 @@ class Group_Buying_Fancy_Reporting extends Group_Buying_Controller {
 	}
 
 	public function reports_show_records() {
-		return 35;
+		return self::RETURN_RECORD;
 	}
 
 	public function new_view( $view ) {
