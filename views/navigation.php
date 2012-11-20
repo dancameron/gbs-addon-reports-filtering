@@ -1,0 +1,2 @@
+<input name="filter" id="filter-box" value="" maxlength="30" size="30" type="text" placeholder="<?php gb_e('Filter') ?>">
+<input id="filter-clear-button" type="submit" value="<?php gb_e('Clear') ?>" class="alt_button"/>
