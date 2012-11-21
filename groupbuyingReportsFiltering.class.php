@@ -42,14 +42,14 @@ class Group_Buying_Fancy_Reporting extends Group_Buying_Controller {
 							if ( i < $report_pages ) {
 								var $url = '<?php echo add_query_arg( array( 'report' => $_GET['report'], 'id' => $_GET['id'], 'ajax' => TRUE ), $report_url ) ?>&showpage=';
 
-								$( "<span>" )
-									.load( $url + i + " #report_rows *", {} , 
+								$( "<div>" )
+									.load( $url + i + " #report_rows", {} , 
 										function( response, status, xhr ) {
 											if (status == "error") {
 												var msg = "<?php gb_e('Sorry but there was an error, this report is not complete: ') ?>";
 												$("#load_errors").html(msg + xhr.status + " " + xhr.statusText);
 											}
-											$("#report_rows").append( $(this).html() );
+											$("#report_rows").append( $(this).contents().html() );
 											var $progress = ((i+1)/$report_pages)*100;
 											$("#progress_bar").progressbar({ value: $progress });
 											load_records(i+1);
