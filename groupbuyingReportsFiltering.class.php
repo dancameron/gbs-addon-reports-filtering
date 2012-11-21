@@ -80,6 +80,7 @@ class Group_Buying_Fancy_Reporting extends Group_Buying_Controller {
 									filterColumns: [0,1,2,3,4,5,6,7,8,9,10,11,12], // probably should just count the the columns but this will work.
 									// filterCaseSensitive: true
 								});
+							// Change the default CSV report button
 							$(".page_title .report_button").click(function(event) {
 								event.preventDefault();
 								$('.report table').TableCSVExport();
@@ -105,7 +106,11 @@ class Group_Buying_Fancy_Reporting extends Group_Buying_Controller {
 									filterColumns: [0,1,2,3,4,5,6,7,8,9,10,11,12], // probably should just count the the columns but this will work.
 									// filterCaseSensitive: true
 								});
-							
+							// Change the default CSV report button
+							$(".page_title .report_button").click(function(event) {
+								event.preventDefault();
+								$('.report table').TableCSVExport();
+							});
 						});
 					</script>
 				<?php
