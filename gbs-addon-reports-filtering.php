@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Group Buying Addon - Fancy Reports: Search, Filter, Sorting and more.
-Version: Beta
+Version: 0.01
 Plugin URI: http://groupbuyingsite.com/marketplace
 Description: Loads up the full report with some fancy AJAX and then uses some more fancy js to allow for sorting and filtering of the full report.
 Author: Sprout Venture
